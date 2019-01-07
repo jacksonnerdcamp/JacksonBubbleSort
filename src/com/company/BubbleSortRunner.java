@@ -9,7 +9,7 @@ public class BubbleSortRunner {
         {System.out.print(num+" ");}
         System.out.println();
 
-        com.company.BubbleSort.bubbleSort(testArr);
+        BubbleSort.bubbleSort(testArr);
 
         System.out.print("After: ");
         for (int num:testArr) {

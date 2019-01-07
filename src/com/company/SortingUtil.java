@@ -23,5 +23,28 @@ public class SortingUtil{
         return false;
     }
 
+    public static int findSmallIndex(int[] arr, int start)
+    {
+        int smallestNumber = 0;
+        int i = start;
+        while(i < arr.length)
+        {
+            smallestNumber = arr[i];
+            if(smallestNumber > arr[i])
+            {
+                smallestNumber = arr[i];
+            }
+            i++;
+        }
+        i = 0;
+        while(i < arr.length)
+        {
+            if(arr[i] == smallestNumber)
+            {
+                return i;
+            }
+        }
+    }
+
 
 }
