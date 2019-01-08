@@ -12,7 +12,7 @@ public class BubbleSort{
             {
                 if (arr[i]> arr[i+1])
                 {
-                    SortingUtil.swap(arr, i+0, i+1);
+                    SortingUtil.swap(arr, i, i+1);
                 }
             }
         }
