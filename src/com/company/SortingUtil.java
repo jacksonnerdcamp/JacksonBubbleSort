@@ -2,7 +2,7 @@ package com.company;
 
 public class SortingUtil{
     //This is self explanatory, if the checkList is false, swap the indices.
-    public static void swap (int[]arr, int i, int j)
+    public static void swap (int[] arr, int i, int j)
     {
         int temp = arr[i];
         arr[i] = arr[j];
@@ -23,29 +23,26 @@ public class SortingUtil{
         return false;
     }
 
-    public static int findSmallIndex(int[] arr, int start)
-    {
-        int smallestNumber = 0;
+    public static int findSmallIndex(int[] arr, int start) {
+        int smallestNumber = arr[start];
         int i = start;
-        while(i < arr.length)
-        {
-            smallestNumber = arr[i];
-            if(smallestNumber > arr[i])
-            {
+        while (i < arr.length) {
+            if (smallestNumber > arr[i]) {
                 smallestNumber = arr[i];
             }
             i++;
         }
-        i = 0;
-        while(i < arr.length)
+        i = start;
+        //This checks against the array for the smallestNumber and returns the index of it.
+        while (i < arr.length)
         {
             if(arr[i] == smallestNumber)
             {
                 return i;
             }
+            i++;
         }
-        return 0;
+        return start;
     }
-
 
 }
