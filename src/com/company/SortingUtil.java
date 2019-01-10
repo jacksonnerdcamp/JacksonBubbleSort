@@ -45,4 +45,15 @@ public class SortingUtil{
         return start;
     }
 
+    public static int[] copyIntArray(int[] arr)
+    {
+        int[] arr2 = new int[arr.length];
+        for(int num : arr)
+        {
+            arr2[num] = arr[num];
+        }
+        return arr2;
+    }
+
+
 }
