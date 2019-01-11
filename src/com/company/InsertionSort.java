@@ -3,13 +3,17 @@ package com.company;
 public class InsertionSort {
     public static void insertionSort(int[] arr)
     {
-        int key = arr[arr.length - 1];
-        for(int i = arr[arr.length - 2]; i > 0; i--)
+        int key;
+        while(SortingUtil.checkList(arr))
         {
-            if(key < arr[i])
-            {
-                SortingUtil.swap(arr, i, i + 1);
-                arr[i] = key;
+
+            for (int i = 0; i < arr.length - 1; i++) {
+                key = i + 1;
+                for (int j = i; j >= 0; j--) {
+                    if (arr[key] < arr[j]) {
+                        SortingUtil.swap(arr, i, key);
+                    }
+                }
             }
         }
     }
