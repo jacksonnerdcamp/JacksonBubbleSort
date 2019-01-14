@@ -55,5 +55,17 @@ public class SortingUtil{
         return arr2;
     }
 
+    public static int[] randomIntArr(int count)
+    {
+        int[]arr = new int[count];
+        for (int i = 0; i < count; i++)
+        {
+            arr[i] = (int)(Math.random() * 1001);
+        }
+
+        return arr;
+    }
+
+
 
 }

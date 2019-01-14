@@ -2,52 +2,81 @@ package com.company;
 
 public class Runner {
     public static void main(String[] args){
+        int[] testArray = SortingUtil.randomIntArr(1000);
+        long timeStart = 0;
+        long duration = 0;
+
+
+
         //bubble sort runner
+        int[] testArr1 = SortingUtil.copyIntArray(testArray);
         System.out.println("Bubble Sort");
-        int [] testArr = {8,6,7,5,4,0,9,10,1,2,3};
         System.out.print("Before: ");
-        for  (int num:testArr)
+        for  (int num:testArr1)
         {System.out.print(num+" ");}
         System.out.println();
 
-        BubbleSort.bubbleSort(testArr);
+        timeStart = System.nanoTime();
+        BubbleSort.bubbleSort(testArr1);
+        duration = System.nanoTime() - timeStart;
+
         System.out.print("After:  ");
-        for (int num:testArr)
+        for (int num:testArr1)
         {
             System.out.print(num + " ");
         }
         System.out.println();
-
-        //selection sort runner
-        System.out.println("Selection Sort");
-        int[] testArr2 = {5,6,7,8,4,0,9,10,2,1,3};
-        System.out.print("Before: ");
-        for  (int num:testArr2)
-        {System.out.print(num+" ");}
+        System.out.println(duration);
         System.out.println();
 
+
+
+        //selection sort runner
+        int[] testArr2 = SortingUtil.copyIntArray(testArray);
+        System.out.println("Selection Sort");
+        System.out.print("Before: ");
+        for  (int num:testArr2)
+        {
+            System.out.print(num+" ");
+        }
+        System.out.println();
+
+        timeStart = System.nanoTime();
         SelectionSort.SelectionSort(testArr2);
+        duration = System.nanoTime() - timeStart;
+
         System.out.print("After:  ");
         for (int num:testArr2)
         {
             System.out.print(num + " ");
         }
         System.out.println();
+        System.out.println(duration);
+        System.out.println();
+
+
 
         //insertion sort here
         System.out.println("Insertion Sort");
-        int[] testArr3 = {10,8,7,6,4,0,9,5,2,1,3};
+        int[] testArr3 = SortingUtil.copyIntArray(testArray);
         System.out.print("Before: ");
         for  (int num:testArr3)
-        {System.out.print(num+" ");}
+        {
+            System.out.print(num+" ");
+        }
         System.out.println();
 
+        timeStart = System.nanoTime();
         InsertionSort.insertionSort(testArr3);
+        duration = System.nanoTime() - timeStart;
+
         System.out.print("After:  ");
         for (int num:testArr3)
         {
             System.out.print(num + " ");
         }
+        System.out.println();
+        System.out.println(duration);
         System.out.println();
 
     }
